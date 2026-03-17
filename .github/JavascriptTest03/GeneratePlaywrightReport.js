@@ -6,10 +6,10 @@ function generatePlaywrightReport(results) {
     const failedNames = [];
 
     for (const step of results) {
-        // 1. Total duration
+        // 1. -- Total duration --
         totalDuration += step.durationMs;
 
-        // 2. Count Test statuses and collect failed names if any
+        // 2. -- Count Test statuses and collect failed names if any --
         if (step.status === "passed") {
             passedCount++;
         } else if (step.status === "failed") {
@@ -20,7 +20,7 @@ function generatePlaywrightReport(results) {
         }
     }
 
-    // 3. Generate the formatted report
+    // 3. -- Generate the formatted report --
     const report = `
     --- PLAYWRIGHT TEST SUMMARY ---
     Total Steps:    ${results.length}
